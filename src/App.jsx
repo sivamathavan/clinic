@@ -13,9 +13,9 @@ const services = [
 ];
 
 const doctors = [
-  { id: 1, name: 'Dr. Sarah Wilson', role: 'Principal Dentist', image: 'https://images.unsplash.com/photo-1559839734-2b71f153678e?w=800&auto=format&fit=crop' },
-  { id: 2, name: 'Dr. Michael Chen', role: 'Orthodontist', image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=800&auto=format&fit=crop' },
-  { id: 3, name: 'Dr. James Miller', role: 'Implant Specialist', image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800&auto=format&fit=crop' },
+  { id: 1, name: 'Dr. Sarah Wilson', role: 'Principal Dentist', image: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 2, name: 'Dr. Michael Chen', role: 'Orthodontist', image: 'https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&w=800' },
+  { id: 3, name: 'Dr. James Miller', role: 'Implant Specialist', image: 'https://images.pexels.com/photos/871495/pexels-photo-871495.jpeg?auto=compress&cs=tinysrgb&w=800' },
 ];
 
 function App() {
@@ -63,6 +63,31 @@ function App() {
         </div>
       </nav>
 
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div 
+            className="mobile-menu"
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 100 }}
+            transition={{ duration: 0.3 }}
+          >
+            <div className="mobile-menu-header">
+              <button className="close-btn" onClick={() => setIsMenuOpen(false)}>
+                <X size={24} />
+              </button>
+            </div>
+            <div className="mobile-menu-links">
+              <a href="#home" onClick={() => setIsMenuOpen(false)}>Home</a>
+              <a href="#services" onClick={() => setIsMenuOpen(false)}>Services</a>
+              <a href="#doctors" onClick={() => setIsMenuOpen(false)}>Our Doctors</a>
+              <a href="#contact" className="mobile-cta" onClick={() => setIsMenuOpen(false)}>Book Appointment</a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       {/* Hero Section */}
       <section id="home" className="hero">
         <div className="container">
@@ -100,7 +125,7 @@ function App() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
             >
-              <img src="https://images.unsplash.com/photo-1629909608135-ca9069a393b1?w=800&auto=format&fit=crop" alt="Dental Care" className="main-img" />
+              <img src="/dental.jpg" alt="Dental Care" className="main-img" />
               <div className="floating-card">
                 <CheckCircle className="icon" />
                 <div>

@@ -1,0 +1,54 @@
+<svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="gradBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e0f2fe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#bae6fd;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="skinGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f4a460;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#daa76b;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="600" fill="url(#gradBg)"/>
+  
+  <!-- Smile/Mouth -->
+  <g id="smile">
+    <!-- Face -->
+    <circle cx="300" cy="280" r="120" fill="url(#skinGrad)"/>
+    
+    <!-- Teeth -->
+    <g id="teeth">
+      <rect x="220" y="320" width="160" height="50" rx="8" fill="white"/>
+      <!-- Tooth divisions -->
+      <line x1="245" y1="320" x2="245" y2="370" stroke="#e0e0e0" stroke-width="2"/>
+      <line x1="270" y1="320" x2="270" y2="370" stroke="#e0e0e0" stroke-width="2"/>
+      <line x1="295" y1="320" x2="295" y2="370" stroke="#e0e0e0" stroke-width="2"/>
+      <line x1="320" y1="320" x2="320" y2="370" stroke="#e0e0e0" stroke-width="2"/>
+      <line x1="345" y1="320" x2="345" y2="370" stroke="#e0e0e0" stroke-width="2"/>
+      <line x1="370" y1="320" x2="370" y2="370" stroke="#e0e0e0" stroke-width="2"/>
+    </g>
+    
+    <!-- Smile curve -->
+    <path d="M 240 330 Q 300 360 360 330" stroke="#2563eb" stroke-width="3" fill="none"/>
+    
+    <!-- Eyes -->
+    <circle cx="260" cy="240" r="12" fill="#1e293b"/>
+    <circle cx="340" cy="240" r="12" fill="#1e293b"/>
+    <circle cx="263" cy="237" r="5" fill="white"/>
+    <circle cx="343" cy="237" r="5" fill="white"/>
+  </g>
+  
+  <!-- Toothbrush -->
+  <g id="toothbrush">
+    <line x1="100" y1="450" x2="180" y2="350" stroke="#ef4444" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="95" cy="455" r="15" fill="#ef4444"/>
+    <rect x="170" y="330" width="35" height="50" rx="4" fill="#64748b"/>
+  </g>
+  
+  <!-- Shield symbol (protection) -->
+  <path d="M 480 200 L 520 220 L 520 280 Q 500 320 500 340 Q 500 320 480 280 L 480 220" fill="#10b981" stroke="#059669" stroke-width="2"/>
+  <text x="495" y="270" font-size="20" fill="white" text-anchor="middle" font-weight="bold">✓</text>
+</svg>
