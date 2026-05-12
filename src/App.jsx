@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Phone, Mail, MapPin, Clock, Shield, Star, CheckCircle, Calendar, MessageSquare, Menu, X, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './App.css';
@@ -22,6 +22,9 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', service: '', date: '' });
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const scrollToContact = useCallback(() => document.getElementById('contact').scrollIntoView(), []);
+  const scrollToServices = useCallback(() => document.getElementById('services').scrollIntoView(), []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -101,8 +104,8 @@ function App() {
               <h1>Your Journey to a <span className="highlight">Perfect Smile</span> Starts Here.</h1>
               <p>Professional dental care delivered with compassion and advanced technology in the heart of Coimbatore.</p>
               <div className="hero-buttons">
-                <button className="btn-primary" onClick={() => document.getElementById('contact').scrollIntoView()}>Book Now</button>
-                <button className="btn-secondary" onClick={() => document.getElementById('services').scrollIntoView()}>Our Services</button>
+                <button className="btn-primary" onClick={scrollToContact}>Book Now</button>
+                <button className="btn-secondary" onClick={scrollToServices}>Our Services</button>
               </div>
               <div className="stats">
                 <div className="stat-item">
